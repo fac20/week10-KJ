@@ -22,7 +22,10 @@ export default function Quiz(props) {
     const correct_answer = currentQuestion.correct_answer;
     const incorrect_answers = currentQuestion.incorrect_answers;
     const choices = [correct_answer, ...incorrect_answers]
-   
+
+        var shuffledChoices = choices.sort(() => Math.random() - 0.5)
+
+
     function checkAnswer(event){
         
         // if selected answer = correct answer 
@@ -50,10 +53,10 @@ export default function Quiz(props) {
     return (
         <main>
             <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} setGameState={props.setGameState}/>
-            { index === 0 ? <h1>Welcome, {props.username}!</h1> : null }
+            { index === 0 ? <h1>Whale hello there, {props.username}!</h1> : null }
             {/* <div dangerouslySetInnerHTML={Quiz()} />; */}
             <h2 style={{color: "green"}}>{index + 1}.<span dangerouslySetInnerHTML={{__html: question}} /></h2> 
-            {choices.map(choice => (
+            {shuffledChoices.map(choice => (
                 <button onClick ={(event) =>{
                     checkAnswer(event)
                     setIndex(index + 1)

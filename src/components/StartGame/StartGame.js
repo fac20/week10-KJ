@@ -10,7 +10,7 @@ export default function StartGame(props){
     
     return (
         <form>
-        <label htmlFor="username">Enter your Username</label>
+        <label htmlFor="username">Enter Username</label>
         <input
             required
             name="username"
