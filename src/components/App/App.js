@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import StartGame from "../StartGame/StartGame"
-import Quiz from "../PlayGame/Questions"
+import Quiz from "../PlayGame/Quiz"
 // import logo from './logo.svg';
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-     { gameStarted ?  <Quiz/> : <StartGame username={username} setUser={setUser} setGameStarted={setGameStarted} /> }
+     { gameStarted ?  <Quiz  username={username} /> : <StartGame username={username} setUser={setUser} setGameStarted={setGameStarted} /> }
     
 
     </div>

@@ -2,12 +2,11 @@
 import getData from "../../utils/data_helpers"
 import React from "react"
 
-export default function Quiz() {
+export default function Quiz(props) {
     const [jsonData, setJsonData] = React.useState(null)
-    // const []
-  
-    console.log(jsonData)
+    const [index, setIndex] = React.useState(0);
 
+    console.log("index", index)
     
     React.useEffect(() => {
         getData().then(results => setJsonData(results))
@@ -16,23 +15,62 @@ export default function Quiz() {
     if (!jsonData) {
         return <h3>...Loading</h3>;
     }
-    const currentQuestion = jsonData.results[0]
+    const currentQuestion = jsonData.results[index]
     const question = currentQuestion.question;
     const correct_answer = currentQuestion.correct_answer;
     const incorrect_answers = currentQuestion.incorrect_answers;
+    const choices = [correct_answer, ...incorrect_answers]
+   console.log("correct answer" , correct_answer)
+    function checkAnswer(event){
+        
+        // if selected answer = correct answer 
+        //  then change background of button to green
+        //  else if wrong background of button to red
+
+        // event.target is the clicked button
+        // event.target.value should be words
+        if (event.target.textContent === correct_answer) {
+            event.target.className = "green";
+        } else {
+            event.target.className = "red";
+        }
+    }
+    /*
+    function createInnerHtml(){
+        return {__html: question}
+        dangerouslySetInnerHTML={createInnerHtml()
+    }
+    */
     
+    
+
+
+
+
     return (
         <main>
-            
-            <h1>Welcome, {props.username}!</h1>
-            <h2>{question}</h2> 
-            <ul>{correct_answer}</ul>
-            <p>{incorrect_answers}</p>
+
+            { index === 0 ? <h1>Welcome, {props.username}!</h1> : null }
+            {/* <div dangerouslySetInnerHTML={Quiz()} />; */}
+            <h2>{index}.{question}</h2> 
+            {choices.map(choice => (
+                <button onClick ={(event) =>{
+                    checkAnswer(event)
+                    setIndex(index + 1)
+                }
+                
+                }>{choice}</button>
+            ))}
+
         </main>
     )
 }
 
 
+{/* <button>{choices[1]}</button>
+<button
+
+>{incorrect_answers}</button> */}
 
 
 
