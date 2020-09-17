@@ -32,9 +32,6 @@ export default function Timer(props) {
 
 }
 
-function Score() {
-    
-}
 
 // function AlterTimer() {
 //     const [alterTimer, setAlterTimer] = React.useState(0)

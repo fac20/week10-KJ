@@ -7,8 +7,7 @@ export default function Quiz(props) {
     const [jsonData, setJsonData] = React.useState(null)
     const [index, setIndex] = React.useState(0);
     const [timeLeft, setTimeLeft] = React.useState(15)
-
-
+   
     console.log("index", index)
     
     React.useEffect(() => {
@@ -32,6 +31,7 @@ export default function Quiz(props) {
         if (event.target.textContent === correct_answer) {
             event.target.className = "green";
             setTimeLeft(timeLeft + 5);
+            props.setScore(props.score + 1)
             
         } else {
             event.target.className = "red";
@@ -61,8 +61,9 @@ export default function Quiz(props) {
                 }
                 
                 }>{choice}</button>
+               
             ))}
-
+             <h2>SCORE:{props.score}</h2>
         </main>
     )
 }
