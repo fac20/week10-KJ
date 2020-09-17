@@ -67,14 +67,6 @@ export default function Quiz(props) {
 }
 
 
-{/* <button>{choices[1]}</button>
-<button
-
->{incorrect_answers}</button> */}
-
-
-
-
 
 
 

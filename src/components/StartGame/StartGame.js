@@ -29,11 +29,3 @@ export default function StartGame(props){
 
 
 
-// function Button() {
-
-{/* <button onClick={(event) => props.setUser(event.target.value)}>
-Submit
-</button> */}
-// }
-
-
