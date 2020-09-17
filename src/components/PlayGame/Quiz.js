@@ -55,7 +55,7 @@ export default function Quiz(props) {
             <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} setGameState={props.setGameState}/>
             { index === 0 ? <h1>Whale hello there, {props.username}!</h1> : null }
             {/* <div dangerouslySetInnerHTML={Quiz()} />; */}
-            <h2 style={{color: "green"}}>{index + 1}.<span dangerouslySetInnerHTML={{__html: question}} /></h2> 
+            <h2>{index + 1}.<span dangerouslySetInnerHTML={{__html: question}} /></h2> 
             {shuffledChoices.map(choice => (
                 <button onClick ={(event) =>{
                     checkAnswer(event)

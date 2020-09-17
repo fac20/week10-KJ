@@ -8,7 +8,7 @@ export default function Timer(props) {
 
     // const [timeLeft, setTimeLeft] = React.useState(15)
 
-    React.useEffect((props) => {
+    React.useEffect(() => {
         //  if there is not timeLeft then game over?
         if (props.timeLeft <= 0) props.setGameState("gameOver");
         // else create set interval function for every second
