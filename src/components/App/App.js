@@ -9,12 +9,13 @@ import './App.css';
 function App() {
   const [username, setUser] = React.useState("")
   const [gameState, setGameState] = React.useState("notStarted")
+  const [score, setScore] = React.useState(0)
 
   return (
     <div className="App">
      { gameState === "notStarted" ? <StartGame username={username} setUser={setUser} setGameState={setGameState}/> :
-     gameState === "started" ? <Quiz  username={username} setGameState={setGameState}/> :
-    <GameOver /> 
+     gameState === "started" ? <Quiz  username={username} setGameState={setGameState} score={score} setScore={setScore}/> :
+    <GameOver setGameState={setGameState} score={score}/> 
      }
 {/*     
       {gameState === “notStarted” ? <StartGame />
