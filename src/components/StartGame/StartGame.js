@@ -10,7 +10,7 @@ export default function StartGame(props){
     
     return (
         <form>
-        <label htmlFor="username">Enter your Username</label>
+        <label htmlFor="username">Enter Username</label>
         <input
             required
             name="username"
@@ -19,7 +19,7 @@ export default function StartGame(props){
             onChange ={(event) => props.setUser(event.target.value)}
         />
         <input type="submit" value="Start Game"
-            onClick={() => props.setGameStarted(true)}
+            onClick={() => props.setGameState("started")}
         
         />
         </form>
@@ -27,13 +27,5 @@ export default function StartGame(props){
     );
 }
 
-
-
-// function Button() {
-
-{/* <button onClick={(event) => props.setUser(event.target.value)}>
-Submit
-</button> */}
-// }
 
 
