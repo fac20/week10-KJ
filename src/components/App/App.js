@@ -1,22 +1,23 @@
 import React from 'react';
 
+
 import StartGame from "../StartGame/StartGame"
+import Quiz from "../PlayGame/Questions"
 // import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  // const [userData, setUserData] = React.useState(null);
   const [username, setUser] = React.useState("")
-  // React.useEffect(() => {
-  //   const username = "";
-    
-  // })
+  const [gameStarted, setGameStarted] = React.useState(false)
+
   return (
     <div className="App">
-      <StartGame username={username} setUser={setUser}/>
+     { gameStarted ?  <Quiz/> : <StartGame username={username} setUser={setUser} setGameStarted={setGameStarted} /> }
+    
 
     </div>
   );
 }
 
 export default App;
+
