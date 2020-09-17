@@ -8,6 +8,7 @@ export default function Quiz(props) {
     const [index, setIndex] = React.useState(0);
     const [timeLeft, setTimeLeft] = React.useState(15)
 
+
     console.log("index", index)
     
     React.useEffect(() => {
@@ -37,21 +38,21 @@ export default function Quiz(props) {
             setTimeLeft(timeLeft - 2);
         }
     }
-    /*
-    function createInnerHtml(){
-        return {__html: question}
-        dangerouslySetInnerHTML={createInnerHtml()
-    }
-    */
+    
+    // function createInnerHtml(){
+    //     return {__html: question}
+    //     dangerouslyS.etInnerHTML={createInnerHtml()
+    // }
+    
     
 
 
     return (
         <main>
-            <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft}/>
+            <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} setGameState={props.setGameState}/>
             { index === 0 ? <h1>Welcome, {props.username}!</h1> : null }
             {/* <div dangerouslySetInnerHTML={Quiz()} />; */}
-            <h2>{index + 1}.{question}</h2> 
+            <h2 style={{color: "green"}}>{index + 1}.<span dangerouslySetInnerHTML={{__html: question}} /></h2> 
             {choices.map(choice => (
                 <button onClick ={(event) =>{
                     checkAnswer(event)

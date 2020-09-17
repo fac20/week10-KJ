@@ -1,4 +1,5 @@
 import React from "react"
+import GameOver from  "../GameOver/GameOver"
 
 // correct_answer +5
 // incorrect_answers -2
@@ -10,7 +11,7 @@ export default function Timer(props) {
 
     React.useEffect(() => {
         //  if there is not timeLeft then game over?
-        if (props.timeLeft <= 0) return;
+        if (props.timeLeft <= 0) props.setGameState("gameOver");
         // else create set interval function for every second
         const intervalId = setInterval(() => {
                 props.setTimeLeft(props.timeLeft - 1)
@@ -21,16 +22,18 @@ export default function Timer(props) {
     return (
    
         <div>
-        {props.timeLeft <= 0 ?<h1>GAME OVER</h1>:  <>
             <h1>{props.timeLeft}</h1>
              <label for="game">progress:</label>
              <progress id="game" value={props.timeLeft} max="30"> {props.timeLeft} </progress>
-        </>}
        
         </div>
         
     )
 
+}
+
+function Score() {
+    
 }
 
 // function AlterTimer() {

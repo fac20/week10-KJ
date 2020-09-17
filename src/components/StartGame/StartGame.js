@@ -19,7 +19,7 @@ export default function StartGame(props){
             onChange ={(event) => props.setUser(event.target.value)}
         />
         <input type="submit" value="Start Game"
-            onClick={() => props.setGameStarted(true)}
+            onClick={() => props.setGameState("started")}
         
         />
         </form>
