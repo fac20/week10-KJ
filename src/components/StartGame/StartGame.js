@@ -1,8 +1,9 @@
 import React from "react";
+import "../App/App.css";
 
 export default function StartGame(props){    
     return (
-        <div>
+        <div className="start_game">
        <h1>How Seal-y!</h1>
         <form>
         <label htmlFor="username">Enter Username</label>
@@ -10,6 +11,9 @@ export default function StartGame(props){
             required
             name="username"
             id="username"
+                    placeholder="Toucan play this game..."
+                    
+                    id="placeholder"
             value={props.username}
             onChange ={(event) => props.setUser(event.target.value)}
         />

@@ -1,6 +1,7 @@
 import getData from "../../utils/data_helpers"
 import React from "react"
 import Timer from "./Timer"
+import '../App/App';
 
 export default function Quiz(props) {
     const [jsonData, setJsonData] = React.useState(null)
@@ -14,11 +15,13 @@ export default function Quiz(props) {
     if (!jsonData) {
         return <h3>...Loading</h3>;
     }
+  
     const currentQuestion = jsonData.results[index]
     const question = currentQuestion.question;
     const correct_answer = currentQuestion.correct_answer;
     const incorrect_answers = currentQuestion.incorrect_answers;
     const choices = [correct_answer, ...incorrect_answers]
+    
 
     var shuffledChoices = choices.sort(() => Math.random() - 0.5)
 
@@ -39,10 +42,13 @@ export default function Quiz(props) {
     }
 
     return (
-        <main>
+        <main className="quiz">
             <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} setGameState={props.setGameState}/>
             { index === 0 ? <h1>Whale hello there, {props.username}!</h1> : null }
-            <h2>{index + 1}.<span dangerouslySetInnerHTML={{__html: question}} /></h2> 
+            { index < 9 ? <h2><span>{index + 1}.<span dangerouslySetInnerHTML={{__html: question}} /></span></h2> : 
+            props.setGameState("gameOver")
+            }
+            
             {shuffledChoices.map(choice => (
                 <button onClick ={(event) =>{
                     checkAnswer(event)
@@ -52,7 +58,7 @@ export default function Quiz(props) {
                 }>{choice}</button>
                
             ))}
-             <h2>SCORE:{props.score}</h2>
+             <h2><span>SCORE:{props.score}</span></h2>
         </main>
     )
 }

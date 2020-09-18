@@ -1,0 +1,13 @@
+.game__over {
+    background-image: url("https://i.imgflip.com/2kr516.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  body{
+      overflow: hidden;
+  }
