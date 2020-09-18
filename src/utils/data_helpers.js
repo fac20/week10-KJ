@@ -8,10 +8,11 @@ const checkResponse = (response) => {
 };
 
 export default function getData () {
-    return fetch("https://opentdb.com/api.php?amount=50&category=27")
+    return fetch("https://opentdb.com/api.php?amount=10&category=27&difficulty=easy")
         .then(checkResponse)
         .catch((err) => {
             throw new Error(`fetch geData failed ${err}`)
         });
 };
+
 

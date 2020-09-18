@@ -1,9 +1,8 @@
 import React from "react"
 
-
 export default function GameOver(props) {
     return (
-        <div>
+        <div class="game__over">
             <h1>GAME OVER!!! How Hawkward...</h1>
             <h2>You Scored {props.score}!</h2>
             <button 

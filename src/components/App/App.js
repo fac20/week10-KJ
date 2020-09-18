@@ -12,16 +12,12 @@ function App() {
   const [score, setScore] = React.useState(0)
 
   return (
-    <div className="App">
+    <div className="bg__image">
      { gameState === "notStarted" ? <StartGame username={username} setUser={setUser} setGameState={setGameState}/> :
      gameState === "started" ? <Quiz  username={username} setGameState={setGameState} score={score} setScore={setScore}/> :
     <GameOver setGameState={setGameState} score={score}/> 
+    
      }
-{/*     
-      {gameState === “notStarted” ? <StartGame />
-      : gameState === “started” ? <Quiz />
-      : <GameOver />} 
-    */}
 
     </div>
   );
