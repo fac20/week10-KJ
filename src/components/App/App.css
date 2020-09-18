@@ -4,9 +4,7 @@ body {
 
 }
 
-.game__over {
-   background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fimgflip.com%2Ftag%2Ffunny%2Bhawk&psig=AOvVaw0xhBDXRviN0aWsvWDcdz79&ust=1600447128173000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1mqvQ8OsCFQAAAAAdAAAAABAD");
- }
+
 
 div {
   text-align: center;
@@ -14,16 +12,55 @@ div {
 
 h1 {
   color: red;
+  font-family: 'Bangers', cursive;
+  font-size: 3rem;
+}
+h2 span { 
+  background-color: white; 
+  border-radius: 20px;
+  padding: 2px;
 }
 
 h2 {
   color: blue;
-  background-color: white;
+  /* background-color: white; */
+  font-size: 1.2rem;
+  
 }
 
 button {
-  
+  /* width: 20%; */
+  font-size: 30px;
+  color: white;
+  background-color: hsl(156, 100%, 31%);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 30px;
+  border: 3px solid hsl(179, 98%, 62%);
+  font-family: 'Comic Neue', cursive;
+}
 
-  color: pink;
-  background-color: green;
+input {
+  width: 20%;
+  font-size: 30px;
+  color: white;
+  background-color: hsl(156, 100%, 31%);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 30px;
+  border: 3px solid hsl(179, 98%, 62%);
+  font-family: 'Comic Neue', cursive;
+}
+
+label {
+  color: hsl(195, 100%, 18%);
+  /* background-color: hsl(69, 88%, 74%); */
+  font-size: 2rem;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+#placeholder {
+font-size: 1rem;
+
 }
