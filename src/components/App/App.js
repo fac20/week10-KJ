@@ -18,11 +18,6 @@ function App() {
     <GameOver setGameState={setGameState} score={score}/> 
     
      }
-{/*     
-      {gameState === “notStarted” ? <StartGame />
-      : gameState === “started” ? <Quiz />
-      : <GameOver />} 
-    */}
 
     </div>
   );

@@ -1,13 +1,6 @@
 import React from "react";
 
-// Display a card that has an input for entering your username 
-// and a "start Game" button
-
-
-// const [gameStarted, setGameStarted] = React.useState(false)
-export default function StartGame(props){
-    //  set a global state eg gamestarted
-    
+export default function StartGame(props){    
     return (
         <div>
        <h1>How Seal-y!</h1>
@@ -25,7 +18,6 @@ export default function StartGame(props){
         
         />
         </form>
-        {/* <img src="https://i.dailymail.co.uk/1s/2019/01/19/00/8715018-0-image-a-32_1547857542694.jpg" /> */}
         </div>
     );
 }
