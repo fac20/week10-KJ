@@ -11,9 +11,7 @@ export default function StartGame(props){
             required
             name="username"
             id="username"
-                    placeholder="Toucan play this game..."
-                    
-                    id="placeholder"
+            placeholder="Toucan play this game..."
             value={props.username}
             onChange ={(event) => props.setUser(event.target.value)}
         />
