@@ -1,5 +1,5 @@
 import React from 'react';
-
+import GameOver from "../GameOver/GameOver"
 
 import StartGame from "../StartGame/StartGame"
 import Quiz from "../PlayGame/Quiz"
@@ -8,12 +8,16 @@ import './App.css';
 
 function App() {
   const [username, setUser] = React.useState("")
-  const [gameStarted, setGameStarted] = React.useState(false)
+  const [gameState, setGameState] = React.useState("notStarted")
+  const [score, setScore] = React.useState(0)
 
   return (
-    <div className="App">
-     { gameStarted ?  <Quiz  username={username} /> : <StartGame username={username} setUser={setUser} setGameStarted={setGameStarted} /> }
+    <div className="bg__image">
+     { gameState === "notStarted" ? <StartGame username={username} setUser={setUser} setGameState={setGameState}/> :
+     gameState === "started" ? <Quiz  username={username} setGameState={setGameState} score={score} setScore={setScore}/> :
+    <GameOver setGameState={setGameState} score={score}/> 
     
+     }
 
     </div>
   );

@@ -1,16 +1,11 @@
 import React from "react";
 
-// Display a card that has an input for entering your username 
-// and a "start Game" button
-
-
-// const [gameStarted, setGameStarted] = React.useState(false)
-export default function StartGame(props){
-    //  set a global state eg gamestarted
-    
+export default function StartGame(props){    
     return (
+        <div>
+       <h1>How Seal-y!</h1>
         <form>
-        <label htmlFor="username">Enter your Username</label>
+        <label htmlFor="username">Enter Username</label>
         <input
             required
             name="username"
@@ -19,21 +14,13 @@ export default function StartGame(props){
             onChange ={(event) => props.setUser(event.target.value)}
         />
         <input type="submit" value="Start Game"
-            onClick={() => props.setGameStarted(true)}
+            onClick={() => props.setGameState("started")}
         
         />
         </form>
-
+        </div>
     );
 }
 
-
-
-// function Button() {
-
-{/* <button onClick={(event) => props.setUser(event.target.value)}>
-Submit
-</button> */}
-// }
 
 
